@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>달력 만들기 실습</title>
+
+
+
+    <style>
+        tr td:first-child {
+            color: red;
+        }
+
+        tr td:last-child {
+            color: blue;
+        }
+
+        td:hover {
+            cursor: pointer;
+            font-weight: 1000;
+        }
+
+        td {
+            writing-mode: vertical-tb;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+
+        </script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <div>날짜 : <input type="text" id="date"></div>
+    <div>내용 : <input type="text" id="contents"></div>
+    <!-- <button onclick="meno();">작성</button> -->
+
+    <h1 style="text-align: center; color: green" ;>2022년 7월</h1>
+
+    <table cellspacing=0 cellpadding=50 width="100%" style="text-align: center;">
+        <tr>
+            <td>日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td>土</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        var date = $("#date");
+        $("td").on("click", function () {
+            date.val($(this).text())
+        })
+
+        document.addEventListener("keydown", function (e) {
+            var key = e.key;
+
+            if (key == "Enter") {
+                var contents = $("#contents").val();
+                console.log(contents);
+                // $(date).append('<br>' + contents);
+
+            }
+        });
+
+    </script>
+</body>
+
+</html>
